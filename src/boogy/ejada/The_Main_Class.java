@@ -9,15 +9,15 @@ public class The_Main_Class {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		/*
 		MH_User2 user = new MH_User2();
 		user.setName("Mohamed Hassan");
-		
+		*/
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
-		session.save(user);
+		//session.save(user);
 		
 		session.getTransaction().commit();
 		session.close();

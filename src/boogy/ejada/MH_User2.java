@@ -1,5 +1,8 @@
 package boogy.ejada;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.*;
 @Entity
 @Table (name= "MH_USER2",uniqueConstraints=@UniqueConstraint (columnNames={"UserName"}))
@@ -20,15 +23,17 @@ public class MH_User2 {
 	@Column (name="PhoneNum")
 	private int phone;
 	
-	@OneToMany
-	@JoinColumn(name="ORDER_ID")
-	private Order order;
+	@OneToMany(mappedBy="ownerUserId")
+	//@JoinTable(joinColumns= @JoinColumn( name="User_ID")
+	//, inverseJoinColumns=@JoinColumn(name="ORDER_ID"))
+	private Collection<Order> Order = new ArrayList<Order>() ;
 	
-	public Order getOrder() {
-		return order;
+	
+	public Collection<Order> getOrder() {
+		return Order;
 	}
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setOrder(Collection<Order> order) {
+		Order = order;
 	}
 	public long getId() {
 		return id;

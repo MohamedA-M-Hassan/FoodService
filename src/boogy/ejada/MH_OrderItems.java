@@ -8,7 +8,7 @@ public class MH_OrderItems {
 	
 	@Id @GeneratedValue
 	private long id;
-	private int count ;
+	private int count;
 	
 	
 	public long getId() {
