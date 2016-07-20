@@ -16,7 +16,15 @@ public class MH_Places {
 	@OneToMany(mappedBy="placeId")
 	private Collection<Order> Order = new ArrayList<Order>() ;
 	
+	@OneToMany(mappedBy="placeId")
+	private Collection<MH_Menu> menu = new ArrayList<MH_Menu>() ;
 	
+	public Collection<MH_Menu> getMenu() {
+		return menu;
+	}
+	public void setMenu(Collection<MH_Menu> menu) {
+		this.menu = menu;
+	}
 	public Collection<Order> getOrder() {
 		return Order;
 	}

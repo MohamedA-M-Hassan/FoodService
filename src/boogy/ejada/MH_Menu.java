@@ -1,5 +1,8 @@
 package boogy.ejada;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +15,27 @@ public class MH_Menu {
 	private String description;
 	private int price ;
 	
+	@OneToMany(mappedBy="menuId")
+	private Collection<MH_OrderItems> orderItems = new ArrayList<MH_OrderItems>();
+	
+	@ManyToOne
+	@JoinColumn(name="PLACE_ID")
+	private MH_Places placeId;
+	
+	
+	
+	public MH_Places getPlaceId() {
+		return placeId;
+	}
+	public void setPlaceId(MH_Places placeId) {
+		this.placeId = placeId;
+	}
+	public Collection<MH_OrderItems> getOrderItems() {
+		return orderItems;
+	}
+	public void setOrderItems(Collection<MH_OrderItems> orderItems) {
+		this.orderItems = orderItems;
+	}
 	public long getId() {
 		return id;
 	}

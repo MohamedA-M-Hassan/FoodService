@@ -27,14 +27,22 @@ public class MH_User2 {
 	// trial 
 	//@JoinTable(joinColumns= @JoinColumn( name="User_ID")
 	//, inverseJoinColumns=@JoinColumn(name="ORDER_ID"))
-	private Collection<Order> Order = new ArrayList<Order>() ;
+	private Collection<Order> order = new ArrayList<Order>() ;
 	
+	@OneToMany(mappedBy="userId")
+	private Collection<MH_OrderItems> orderItems = new ArrayList<MH_OrderItems>();
 	
+	public Collection<MH_OrderItems> getOrderItems() {
+		return orderItems;
+	}
+	public void setOrderItems(Collection<MH_OrderItems> orderItems) {
+		this.orderItems = orderItems;
+	}
 	public Collection<Order> getOrder() {
-		return Order;
+		return order;
 	}
 	public void setOrder(Collection<Order> order) {
-		Order = order;
+		order = order;
 	}
 	public long getId() {
 		return id;
