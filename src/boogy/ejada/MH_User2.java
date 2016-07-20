@@ -20,11 +20,20 @@ public class MH_User2 {
 	@Column (name="PhoneNum")
 	private int phone;
 	
+	@OneToMany
+	@JoinColumn(name="ORDER_ID")
+	private Order order;
 	
-	public long getUserId() {
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+	public long getId() {
 		return id;
 	}
-	public void setUserId(long userId) {
+	public void setId(long userId) {
 		this.id = userId;
 	}
 	public String getPass() {
