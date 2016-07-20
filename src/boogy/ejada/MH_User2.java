@@ -24,6 +24,7 @@ public class MH_User2 {
 	private int phone;
 	
 	@OneToMany(mappedBy="ownerUserId")
+	// trial 
 	//@JoinTable(joinColumns= @JoinColumn( name="User_ID")
 	//, inverseJoinColumns=@JoinColumn(name="ORDER_ID"))
 	private Collection<Order> Order = new ArrayList<Order>() ;

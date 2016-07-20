@@ -1,5 +1,8 @@
 package boogy.ejada;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +13,16 @@ public class MH_Places {
 	private String placeName;
 	private int phone ;
 	
+	@OneToMany(mappedBy="placeId")
+	private Collection<Order> Order = new ArrayList<Order>() ;
+	
+	
+	public Collection<Order> getOrder() {
+		return Order;
+	}
+	public void setOrder(Collection<Order> order) {
+		Order = order;
+	}
 	public long getId() {
 		return id;
 	}
