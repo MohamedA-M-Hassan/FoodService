@@ -41,8 +41,8 @@ public class MH_User2 {
 	public Collection<Order> getOrder() {
 		return order;
 	}
-	public void setOrder(Collection<Order> order) {
-		order = order;
+	public void setOrder(Collection<Order> oorder) {
+		order = oorder;
 	}
 	public long getId() {
 		return id;

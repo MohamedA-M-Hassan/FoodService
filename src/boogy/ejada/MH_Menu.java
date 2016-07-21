@@ -11,8 +11,7 @@ public class MH_Menu {
 	@Id @GeneratedValue
 	private long id;
 	private String Name;
-	@Lob
-	private String description;
+	@Lob private String description;
 	private int price ;
 	
 	@OneToMany(mappedBy="menuId")

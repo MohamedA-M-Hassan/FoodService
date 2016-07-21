@@ -1,8 +1,6 @@
 package boogy.ejada;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
+import java.util.*;
 import javax.persistence.*;
 
 @Entity
