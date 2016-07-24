@@ -10,9 +10,36 @@ public class MH_OrderItemView {
 	@Column(name="ORDER_ID")
     private Long orderID ;
     
+	@Column (name = "USER_ID")
+	private long userId;
+	
+	@Column (name ="PLACE_ID")
+	private long placeId;
+	
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public long getPlaceId() {
+		return placeId;
+	}
+
+	public void setPlaceId(long placeId) {
+		this.placeId = placeId;
+	}
+
+	public void setOrderID(Long orderID) {
+		this.orderID = orderID;
+	}
+
 	@Column(name="PLACE_NAME")
     private String placeName ;
     
+	
 	@Column(name="USER_NAME")
     private String userName;
     

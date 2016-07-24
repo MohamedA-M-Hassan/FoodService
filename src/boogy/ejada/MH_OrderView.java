@@ -9,8 +9,31 @@ public class MH_OrderView {
 	@Column (name="ORDER_ID")
 	private Long orderId;
 	
+	@Column (name = "USER_ID")
+	private long userId;
+	
+	@Column (name ="PLACE_ID")
+	private long placeId;
+	
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public long getPlaceId() {
+		return placeId;
+	}
+
+	public void setPlaceId(long placeId) {
+		this.placeId = placeId;
+	}
+
 	@Column (name ="OWNER_NAME")
 	private String ownerName;
+	
 	
 	@Column (name= "PLACE_NAME")
 	private String place;
