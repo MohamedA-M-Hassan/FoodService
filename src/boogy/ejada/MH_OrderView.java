@@ -21,6 +21,17 @@ public class MH_OrderView {
 	
 	@Column (name="ORDER_DATE")
 	private Date orderDate;
+	
+	@Column (name="ORDER_NAME")
+	private String orderName;
+
+	public String getOrderName() {
+		return orderName;
+	}
+
+	public void setOrderName(String orderName) {
+		this.orderName = orderName;
+	}
 
 	public Long getOrderId() {
 		return orderId;
