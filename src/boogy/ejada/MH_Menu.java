@@ -8,11 +8,13 @@ import javax.persistence.*;
 @Entity
 @Table (name = "MH_Menu2")
 public class MH_Menu {
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_generator")
+	@SequenceGenerator(name = "seq_generator", sequenceName = "MH_ID_SEQUENCE",allocationSize=1)
 	private long id;
 	private String Name;
 	@Lob private String description;
-	private int price ;
+	private double price ;
 	
 	@OneToMany(mappedBy="menuId")
 	private Collection<MH_OrderItems> orderItems = new ArrayList<MH_OrderItems>();
@@ -20,9 +22,7 @@ public class MH_Menu {
 	@ManyToOne
 	@JoinColumn(name="PLACE_ID")
 	private MH_Places placeId;
-	
-	
-	
+
 	public MH_Places getPlaceId() {
 		return placeId;
 	}
@@ -54,10 +54,10 @@ public class MH_Menu {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	 

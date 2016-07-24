@@ -1,7 +1,7 @@
 package boogy.ejada;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -9,11 +9,13 @@ import javax.persistence.*;
 @Table (name = "MH_Order2")
 public class Order {
 	
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_generator")
+	@SequenceGenerator(name = "seq_generator", sequenceName = "MH_ID_SEQUENCE",allocationSize=1)
 	private long id;
 	
 	private String status;
-	private int orderDate;
+	private Date orderDate;
 	
 	@ManyToOne
 	@JoinColumn(name="USER_ID")
@@ -59,13 +61,12 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getOrderDate() {
+	public Date getOrderDate() {
 		return orderDate;
 	}
-	public void setOrderDate(int orderDate) {
+	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
 	}
-	
-	
-	
+
+
 }

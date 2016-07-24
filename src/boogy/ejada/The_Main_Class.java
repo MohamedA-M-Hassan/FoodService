@@ -3,14 +3,17 @@ import java.util.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import boogy.ejada.*;
+// import boogy.ejada.*;
+import org.hibernate.Query;
+
+
 
 public class The_Main_Class {
 
 	public static void main(String[] args) {
 		
 		MH_User2 user = new MH_User2();
-		user.setName("Mohaljgsndn");
+		user.setName("WAHOOOOO");
 		/*
 		 MH_User2 []user = new MH_User2[3];
 		
@@ -45,6 +48,7 @@ public class The_Main_Class {
 		*/
 		session.getTransaction().commit();
 		session.close();
+	
 	}
 
 }

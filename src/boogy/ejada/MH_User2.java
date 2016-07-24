@@ -8,7 +8,12 @@ import javax.persistence.*;
 @Table (name= "MH_USER2",uniqueConstraints=@UniqueConstraint (columnNames={"UserName"}))
 
 public class MH_User2 {
-	@Id @GeneratedValue
+	
+	//Sequence
+	
+	@Id 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_generator")
+	@SequenceGenerator(name = "seq_generator", sequenceName = "MH_ID_SEQUENCE",allocationSize=1)
 	private long id;
 	
 	@Column (name="Passward")

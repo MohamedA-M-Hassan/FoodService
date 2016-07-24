@@ -6,7 +6,9 @@ import javax.persistence.*;
 @Table(name= "MH_OrderItems2")
 public class MH_OrderItems {
 	
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_generator")
+	@SequenceGenerator(name = "seq_generator", sequenceName = "MH_ID_SEQUENCE",allocationSize=1)
 	private long id;
 	private int count;
 	
