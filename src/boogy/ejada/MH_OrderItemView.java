@@ -5,8 +5,18 @@ import javax.persistence.*;
 @Entity(name = "MH_ORDER_ITEM_VIEW")
 
 public class MH_OrderItemView {
-	@Id
-	//TODO add id 
+	@Id 
+	@Column (name = "ID")
+	private long id; 
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Column(name="ORDER_ID")
     private Long orderID ;
     
