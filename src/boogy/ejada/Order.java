@@ -16,8 +16,10 @@ public class Order {
 	
 	private String status;
 	private Date orderDate;
+	private String orderName;
 	
-	@ManyToOne
+	
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="USER_ID")
 	private MH_User2 ownerUserId;
 	
@@ -25,10 +27,16 @@ public class Order {
 	@JoinColumn(name="PLACE_ID")
 	private MH_Places placeId;
 	
-	@OneToMany(mappedBy="orderId")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="orderId")
 	private Collection<MH_OrderItems> orderItems = new ArrayList<MH_OrderItems>();
 	
 	
+	public String getOrderName() {
+		return orderName;
+	}
+	public void setOrderName(String orderName) {
+		this.orderName = orderName;
+	}
 	public Collection<MH_OrderItems> getOrderItems() {
 		return orderItems;
 	}

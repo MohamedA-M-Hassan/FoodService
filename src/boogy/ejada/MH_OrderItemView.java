@@ -6,9 +6,7 @@ import javax.persistence.*;
 
 public class MH_OrderItemView {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_generator")
-	@SequenceGenerator(name = "seq_generator", sequenceName = "MH_ID_SEQUENCE",allocationSize=1)
-	
+	//TODO add id 
 	@Column(name="ORDER_ID")
     private Long orderID ;
     

@@ -28,13 +28,13 @@ public class MH_User2 {
 	@Column (name="PhoneNum")
 	private int phone;
 	
-	@OneToMany(mappedBy="ownerUserId")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="ownerUserId")
 	// trial 
 	//@JoinTable(joinColumns= @JoinColumn( name="User_ID")
 	//, inverseJoinColumns=@JoinColumn(name="ORDER_ID"))
 	private Collection<Order> order = new ArrayList<Order>() ;
 	
-	@OneToMany(mappedBy="userId")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="userId")
 	private Collection<MH_OrderItems> orderItems = new ArrayList<MH_OrderItems>();
 	
 	public Collection<MH_OrderItems> getOrderItems() {

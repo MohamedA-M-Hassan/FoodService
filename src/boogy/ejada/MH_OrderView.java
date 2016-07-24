@@ -4,9 +4,8 @@ import java.util.*;
 @Entity(name="MH_ORDER_VIEW")
 
 public class MH_OrderView {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_generator")
-	@SequenceGenerator(name = "seq_generator", sequenceName = "MH_ID_SEQUENCE",allocationSize=1)
 	@Column (name="ORDER_ID")
 	private Long orderId;
 	
@@ -20,7 +19,7 @@ public class MH_OrderView {
 	@Column(name = "STATUS")
 	private String status;
 	
-	@Column (name="DATE")
+	@Column (name="ORDER_DATE")
 	private Date orderDate;
 
 	public Long getOrderId() {

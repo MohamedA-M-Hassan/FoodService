@@ -13,13 +13,17 @@ public class MH_Menu {
 	@SequenceGenerator(name = "seq_generator", sequenceName = "MH_ID_SEQUENCE",allocationSize=1)
 	private long id;
 	private String Name;
-	@Lob private String description;
+	
+	@Lob
+	private String description;
+	
 	private double price ;
 	
-	@OneToMany(mappedBy="menuId")
+	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="menuId")
 	private Collection<MH_OrderItems> orderItems = new ArrayList<MH_OrderItems>();
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="PLACE_ID")
 	private MH_Places placeId;
 

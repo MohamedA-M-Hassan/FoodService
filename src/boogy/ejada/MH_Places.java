@@ -14,10 +14,10 @@ public class MH_Places {
 	private String placeName;
 	private int phone ;
 	
-	@OneToMany(mappedBy="placeId")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="placeId")
 	private Collection<Order> Order = new ArrayList<Order>() ;
 	
-	@OneToMany(mappedBy="placeId")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="placeId")
 	private Collection<MH_Menu> menu = new ArrayList<MH_Menu>() ;
 	
 	public Collection<MH_Menu> getMenu() {

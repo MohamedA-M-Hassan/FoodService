@@ -12,15 +12,15 @@ public class MH_OrderItems {
 	private long id;
 	private int count;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn (name="ORDER_ID")
 	private Order orderId;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn (name="MENU_ID")
 	private MH_Menu menuId;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn (name="USER_ID")
 	private MH_User2 userId;
 	
